@@ -43,6 +43,7 @@ export default function TerminalLanding() {
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     setDragging(true);
+    if (!windowRef.current) return;
     const rect = windowRef.current.getBoundingClientRect();
     offset.current = {
       x: e.clientX - rect.left,
@@ -50,7 +51,13 @@ export default function TerminalLanding() {
     };
   };
 
+  // For React events (if needed on divs)
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    // Not used for window events
+  };
+
+  // For native window events
+  const handleWindowPointerMove = (e: PointerEvent) => {
     if (!dragging) return;
 
     const maxX = window.innerWidth - (windowRef.current?.offsetWidth || 0);
@@ -68,10 +75,10 @@ export default function TerminalLanding() {
   const handlePointerUp = () => setDragging(false);
 
   useEffect(() => {
-    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointermove", handleWindowPointerMove);
     window.addEventListener("pointerup", handlePointerUp);
     return () => {
-      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointermove", handleWindowPointerMove);
       window.removeEventListener("pointerup", handlePointerUp);
     };
   });

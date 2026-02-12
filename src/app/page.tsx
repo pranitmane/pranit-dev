@@ -45,13 +45,13 @@ export default function TerminalLanding() {
       {/* Socials */}
       <div className="absolute bottom-6 sm:bottom-8 text-xs sm:text-sm font-mono text-gray-500 tracking-wide text-center w-full px-4">
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <a href="#" className="hover:text-white transition-colors duration-300">x</a>
+          <a href="https://x.com/pranitbmane" className="hover:text-white transition-colors duration-300">x</a>
           <span>·</span>
-          <a href="#" className="hover:text-white transition-colors duration-300">youtube</a>
+          <a href="https://youtube.com/@pranitmane" className="hover:text-white transition-colors duration-300">youtube</a>
           <span>·</span>
-          <a href="#" className="hover:text-white transition-colors duration-300">github</a>
+          <a href="https://github.com/pranitmane" className="hover:text-white transition-colors duration-300">github</a>
           <span>·</span>
-          <a href="#" className="hover:text-white transition-colors duration-300">portfolio</a>
+          <a href="https://pranitmane.com" className="hover:text-white transition-colors duration-300">portfolio</a>
         </div>
       </div>
     </div>

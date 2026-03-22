@@ -72,18 +72,23 @@ export default function NowFeed({ initialPosts, initialNextCursor }: NowFeedProp
   const [loading, setLoading] = useState(false)
   const sentinelRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const uid = window.location.hash.slice(1)
-    if (!uid) return
-    if (document.getElementById(uid)) return // browser handles natively
-    // post not in DOM yet — watched by the posts effect below
-  }, [])
+  const scrolledToHash = useRef(false)
 
   useEffect(() => {
     const uid = window.location.hash.slice(1)
+    if (!uid) { scrolledToHash.current = true; return }
+    if (document.getElementById(uid)) { scrolledToHash.current = true; return } // browser handles natively
+  }, [])
+
+  useEffect(() => {
+    if (scrolledToHash.current) return
+    const uid = window.location.hash.slice(1)
     if (!uid) return
     const el = document.getElementById(uid)
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" })
+      scrolledToHash.current = true
+    }
   }, [posts])
 
   useEffect(() => {

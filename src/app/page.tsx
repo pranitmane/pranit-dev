@@ -89,6 +89,18 @@ export default function TerminalLanding() {
       style={{ height: viewportHeight }}
       className="relative w-full bg-[#05080a] overflow-hidden"
     >
+      <div className="sr-only">
+        <h1>Pranit Mane</h1>
+        <p>Building stuff with code.</p>
+        <nav>
+          <a href="https://x.com/pranitbmane">X</a>
+          <a href="https://youtube.com/@pranitmane">YouTube</a>
+          <a href="https://github.com/pranitmane">GitHub</a>
+          <a href="https://pranitmane.com">Portfolio</a>
+          <a href="/now">Now</a>
+        </nav>
+      </div>
+
       {/* Fixed Background Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-125 h-125 sm:w-200 sm:h-200 bg-emerald-500/20 rounded-full blur-3xl" />

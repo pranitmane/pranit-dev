@@ -15,7 +15,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "अनंत",
-  description: "Building stuff with code",
+  description: "Building stuff with code.",
+  openGraph: {
+    title: "Pranit Mane",
+    description: "Building stuff with code.",
+    url: "https://pranitmane.com",
+    siteName: "Pranit Mane",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Pranit Mane",
+    description: "Building stuff with code.",
+    creator: "@pranitbmane",
+  },
 };
 
 export default function RootLayout({

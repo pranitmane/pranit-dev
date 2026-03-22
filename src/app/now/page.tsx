@@ -1,22 +1,38 @@
-import { fetchPosts } from "@/lib/nowu"
+import { fetchPosts, fetchStats } from "@/lib/nowu"
 import NowFeed from "./NowFeed"
 import Socials from "@/components/Socials"
 
 export const metadata = {
   title: "Nowu | Pranit",
   description: "What I'm up to right now.",
+  openGraph: {
+    title: "Nowu | Pranit",
+    description: "What I'm up to right now.",
+    url: "https://pranitmane.com/now",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Nowu | Pranit",
+    description: "What I'm up to right now.",
+    creator: "@pranitbmane",
+  },
 }
 
 export default async function NowPage() {
-  const { items, nextCursor } = await fetchPosts()
+  const [{ items, nextCursor }, { visible }] = await Promise.all([
+    fetchPosts(),
+    fetchStats(),
+  ])
 
   return (
     <main className="min-h-screen bg-[#05080a] px-6 py-16 sm:px-12">
       <div className="mx-auto max-w-xl">
         <h1 className="mb-2 font-mono text-2xl text-white">/now</h1>
-        <p className="mb-10 font-mono text-sm text-gray-500">
+        <p className="font-mono text-sm text-gray-500">
           What I&apos;m up to right now.
         </p>
+        <p className="mb-10 font-mono text-xs text-gray-600">{visible} posts</p>
         <NowFeed initialPosts={items} initialNextCursor={nextCursor} />
         <Socials className="mt-16" />
       </div>

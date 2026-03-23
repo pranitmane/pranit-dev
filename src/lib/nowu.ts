@@ -14,7 +14,7 @@ export interface PaginatedPosts {
   nextCursor: number | null
 }
 
-export async function fetchPosts(cursor = 0, limit = 20): Promise<PaginatedPosts> {
+export async function fetchPosts(cursor = 0, limit = 50): Promise<PaginatedPosts> {
   const res = await fetch(
     `${process.env.NOWU_API_BASE_URL}/posts?limit=${limit}&cursor=${cursor}`,
     {

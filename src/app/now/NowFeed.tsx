@@ -91,19 +91,26 @@ export default function NowFeed({ initialPosts, initialNextCursor }: NowFeedProp
     }
   }, [posts])
 
+  const loadingRef = useRef(false)
+
   useEffect(() => {
     if (!cursor || !sentinelRef.current) return
     const observer = new IntersectionObserver(async ([entry]) => {
-      if (!entry.isIntersecting || loading) return
+      if (!entry.isIntersecting || loadingRef.current) return
+      loadingRef.current = true
       setLoading(true)
-      const { items, nextCursor } = await loadMorePosts(cursor)
-      setPosts((prev) => [...prev, ...items])
-      setCursor(nextCursor)
-      setLoading(false)
+      try {
+        const { items, nextCursor } = await loadMorePosts(cursor)
+        setPosts((prev) => [...prev, ...items])
+        setCursor(nextCursor)
+      } finally {
+        loadingRef.current = false
+        setLoading(false)
+      }
     })
     observer.observe(sentinelRef.current)
     return () => observer.disconnect()
-  }, [cursor, loading])
+  }, [cursor])
 
   return (
     <>

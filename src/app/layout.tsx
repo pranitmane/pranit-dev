@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pranitmane.com"),
+  metadataBase: new URL("https://pranit.dev"),
   title: {
     default: "Pranit Mane | अनंत",
     template: "%s | Pranit Mane",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pranit Mane",
     description: "Pranit Mane — developer building stuff with code.",
-    url: "https://pranitmane.com",
+    url: "https://pranit.dev",
     siteName: "Pranit Mane",
     type: "website",
   },
@@ -55,7 +55,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Pranit Mane",
-              url: "https://pranitmane.com",
+              url: "https://pranit.dev",
               sameAs: [
                 "https://x.com/pranitbmane",
                 "https://github.com/pranitmane",

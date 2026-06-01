@@ -4,7 +4,7 @@ const links = [
   { label: "x", href: "https://x.com/pranitbmane", external: true },
   { label: "yt", href: "https://youtube.com/@pranitmane", external: true },
   { label: "gh", href: "https://github.com/pranitmane", external: true },
-  { label: "web", href: "https://pranitmane.com", external: true },
+  { label: "web", href: "https://pranit.dev", external: true },
   { label: "nowu", href: "/now", external: false },
 ]
 

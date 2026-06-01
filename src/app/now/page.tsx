@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Now | Pranit Mane",
     description: "What Pranit Mane is up to right now.",
-    url: "https://pranitmane.com/now",
+    url: "https://pranit.dev/now",
     type: "website",
   },
   twitter: {

@@ -3,18 +3,21 @@ import NowFeed from "./NowFeed"
 import Socials from "@/components/Socials"
 
 export const metadata = {
-  title: "Now | Pranit",
-  description: "What I'm up to right now.",
+  title: "Now",
+  description: "What Pranit Mane is up to right now.",
+  alternates: {
+    canonical: "/now",
+  },
   openGraph: {
-    title: "Now | Pranit",
-    description: "What I'm up to right now.",
+    title: "Now | Pranit Mane",
+    description: "What Pranit Mane is up to right now.",
     url: "https://pranitmane.com/now",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Now | Pranit",
-    description: "What I'm up to right now.",
+    title: "Now | Pranit Mane",
+    description: "What Pranit Mane is up to right now.",
     creator: "@pranitbmane",
   },
 }

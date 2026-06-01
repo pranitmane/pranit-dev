@@ -14,11 +14,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "अनंत",
-  description: "Building stuff with code.",
+  metadataBase: new URL("https://pranitmane.com"),
+  title: {
+    default: "Pranit Mane | अनंत",
+    template: "%s | Pranit Mane",
+  },
+  description: "Pranit Mane — developer building stuff with code.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Pranit Mane",
-    description: "Building stuff with code.",
+    description: "Pranit Mane — developer building stuff with code.",
     url: "https://pranitmane.com",
     siteName: "Pranit Mane",
     type: "website",
@@ -26,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Pranit Mane",
-    description: "Building stuff with code.",
+    description: "Pranit Mane — developer building stuff with code.",
     creator: "@pranitbmane",
   },
 };
@@ -41,6 +48,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Pranit Mane",
+              url: "https://pranitmane.com",
+              sameAs: [
+                "https://x.com/pranitbmane",
+                "https://github.com/pranitmane",
+                "https://youtube.com/@pranitmane",
+              ],
+              description: "Developer building stuff with code.",
+            }),
+          }}
+        />
         {children}
 
         {/* Microsoft Clarity */}

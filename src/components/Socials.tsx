@@ -1,11 +1,11 @@
 import { Fragment } from "react"
 
 const links = [
-  { label: "x", href: "https://x.com/pranitbmane" },
-  { label: "yt", href: "https://youtube.com/@pranitmane" },
-  { label: "gh", href: "https://github.com/pranitmane" },
-  { label: "web", href: "https://pranitmane.com" },
-  { label: "nowu", href: "/now" },
+  { label: "x", href: "https://x.com/pranitbmane", external: true },
+  { label: "yt", href: "https://youtube.com/@pranitmane", external: true },
+  { label: "gh", href: "https://github.com/pranitmane", external: true },
+  { label: "web", href: "https://pranitmane.com", external: true },
+  { label: "nowu", href: "/now", external: false },
 ]
 
 export default function Socials({ className }: { className?: string }) {
@@ -18,6 +18,9 @@ export default function Socials({ className }: { className?: string }) {
             <a
               href={link.href}
               className="hover:text-white transition-colors duration-300"
+              {...(link.external
+                ? { target: "_blank", rel: "me noopener noreferrer" }
+                : {})}
             >
               {link.label}
             </a>

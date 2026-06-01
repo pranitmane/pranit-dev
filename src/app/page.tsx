@@ -91,12 +91,11 @@ export default function TerminalLanding() {
     >
       <div className="sr-only">
         <h1>Pranit Mane</h1>
-        <p>Building stuff with code.</p>
+        <p>Developer building stuff with code.</p>
         <nav>
-          <a href="https://x.com/pranitbmane">X</a>
-          <a href="https://youtube.com/@pranitmane">YouTube</a>
-          <a href="https://github.com/pranitmane">GitHub</a>
-          <a href="https://pranitmane.com">Portfolio</a>
+          <a href="https://x.com/pranitbmane" rel="me noopener noreferrer" target="_blank">X</a>
+          <a href="https://youtube.com/@pranitmane" rel="me noopener noreferrer" target="_blank">YouTube</a>
+          <a href="https://github.com/pranitmane" rel="me noopener noreferrer" target="_blank">GitHub</a>
           <a href="/now">Now</a>
         </nav>
       </div>

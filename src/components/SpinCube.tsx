@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 
 const SIZE = 88
 const HALF = SIZE / 2
-const IDLE_SPIN = 0.35
+const IDLE_SPIN = -0.35
 
 const faces = [
   { glyph: "अ", transform: `rotateY(0deg) translateZ(${HALF}px)` },

@@ -42,17 +42,17 @@ function PostCard({ post }: { post: Post }) {
   return (
     <article
       id={post.uid}
-      className={`border-b border-white/10 py-6 ${!isRecent ? "cursor-pointer" : ""}`}
+      className={`border-b border-line py-6 ${!isRecent ? "cursor-pointer" : ""}`}
       onClick={!isRecent ? handleAnchor : undefined}
     >
       <p
-        className="text-gray-300 font-mono text-sm whitespace-pre-wrap leading-relaxed cursor-pointer"
+        className="text-foreground/80 font-mono text-sm whitespace-pre-wrap leading-relaxed cursor-pointer"
         onClick={isRecent ? (e) => { e.stopPropagation(); handleAnchor() } : undefined}
       >
         {post.content}
       </p>
       <time
-        className={`mt-3 block text-xs text-gray-500 font-mono ${isRecent ? "cursor-pointer select-none" : ""}`}
+        className={`mt-3 block text-xs text-faint font-mono ${isRecent ? "cursor-pointer select-none" : ""}`}
         onClick={isRecent ? (e) => { e.stopPropagation(); setShowAbsolute((v) => !v) } : undefined}
       >
         {timestampDisplay} · {post.origin}
@@ -119,10 +119,10 @@ export default function NowFeed({ initialPosts, initialNextCursor }: NowFeedProp
       ))}
       <div ref={sentinelRef} />
       {loading && (
-        <p className="py-6 text-center text-xs text-gray-500 font-mono">Loading...</p>
+        <p className="py-6 text-center text-xs text-faint font-mono">loading...</p>
       )}
       {!cursor && !loading && posts.length > 0 && (
-        <p className="py-6 text-center text-xs text-gray-500 font-mono">— end —</p>
+        <p className="py-6 text-center text-xs text-faint font-mono">— end —</p>
       )}
     </>
   )

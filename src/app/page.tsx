@@ -1,11 +1,11 @@
 import { fetchPosts, type Post } from "@/lib/nowu"
 import { featured, more, stack, type Project } from "@/lib/projects"
+import SpinCube from "@/components/SpinCube"
 
 const socials = [
   { label: "x", href: "https://x.com/pranitbmane", external: true },
   { label: "github", href: "https://github.com/pranitmane", external: true },
   { label: "youtube", href: "https://youtube.com/@pranitmane", external: true },
-  { label: "mail", href: "mailto:manepranit10@gmail.com", external: true },
   { label: "/now", href: "/now", external: false },
 ]
 
@@ -109,6 +109,13 @@ export default async function Home() {
           >
             अनंत
           </span>
+
+          <div
+            className="rise absolute right-2 top-32 hidden sm:block"
+            style={{ animationDelay: "600ms" }}
+          >
+            <SpinCube />
+          </div>
 
           <p className="rise font-mono text-xs text-faint" style={{ animationDelay: "0ms" }}>
             <span className="text-accent">pranit@dev</span>:~$ whoami
@@ -271,7 +278,7 @@ export default async function Home() {
                 </a>
               ))}
             </div>
-            <p className="font-mono text-xs text-faint">© {new Date().getFullYear()} pranit mane · built in the open</p>
+            <p className="font-mono text-xs text-faint">© {new Date().getFullYear()} pranit mane · fueled by chai</p>
           </div>
         </footer>
       </main>

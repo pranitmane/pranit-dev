@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
@@ -13,19 +13,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "500"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://pranit.dev"),
   title: {
     default: "Pranit Mane | अनंत",
     template: "%s | Pranit Mane",
   },
-  description: "Pranit Mane — developer building stuff with code.",
+  description:
+    "Pranit Mane — builder & software engineer. Making phonedown, radial and maptym. Thinking out loud at /now.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Pranit Mane",
-    description: "Pranit Mane — developer building stuff with code.",
+    description:
+      "Pranit Mane — builder & software engineer. Making phonedown, radial and maptym. Thinking out loud at /now.",
     url: "https://pranit.dev",
     siteName: "Pranit Mane",
     type: "website",
@@ -33,7 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Pranit Mane",
-    description: "Pranit Mane — developer building stuff with code.",
+    description:
+      "Pranit Mane — builder & software engineer. Making phonedown, radial and maptym. Thinking out loud at /now.",
     creator: "@pranitbmane",
   },
 };
@@ -46,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} grain antialiased`}
       >
         <script
           type="application/ld+json"
@@ -61,7 +71,8 @@ export default function RootLayout({
                 "https://github.com/pranitmane",
                 "https://youtube.com/@pranitmane",
               ],
-              description: "Developer building stuff with code.",
+              description:
+                "Builder & software engineer. Making phonedown, radial and maptym.",
             }),
           }}
         />
